@@ -18,7 +18,7 @@ language = {"EN-TR":"turkce-ingilizce",
 
 
 cevirilecek_dil = input("Çevirme işlemini seçiniz: ('EN-TR','TR-EN' gibi girin.)")
-cevirilecek_kelime = input("Çevirilececk kelimeyi giriniz:")
+cevirilecek_kelime = input("Çevirilecek kelimeyi giriniz:")
 
 
 if cevirilecek_dil in language:
