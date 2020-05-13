@@ -55,13 +55,16 @@ class Tureng(object):
 
     #Başka dilden ingilizceye çevirmek için gerekli fonksiyon
     def translate_other_to_en(self):
-        kelime_url_r = BeautifulSoup(self.request_html(),'html.parser')
-        table_kelime_r = kelime_url_r.find_all('table',id = 'englishResultsTable')
-        self.anlam = table_kelime_r[0].find_all('td',class_ = 'en tm')
-        self.kategori = table_kelime_r[0].find_all('td',class_ = 'hidden-xs')
+      try:
+          kelime_url_r = BeautifulSoup(self.request_html(),'html.parser')
+          table_kelime_r = kelime_url_r.find_all('table',id = 'englishResultsTable')
+          self.anlam = table_kelime_r[0].find_all('td',class_ = 'en tm')
+          self.kategori = table_kelime_r[0].find_all('td',class_ = 'hidden-xs')
+     
+      except IndexError:
+          print("Kelime bulunamadı.")
 
-
-
+           
 
 
 
